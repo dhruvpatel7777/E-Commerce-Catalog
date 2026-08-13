@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../redux/cartSlice";
 import CartItem from "../components/CartItem";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -22,27 +23,32 @@ function Cart() {
   if (cartItems.length === 0) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-slate-950 px-6 text-white">
-        <div className="w-full max-w-lg rounded-3xl border border-white/10 bg-white/[0.05] p-10 text-center shadow-2xl backdrop-blur-xl">
+        <div className="flex min-h-[60vh] items-center justify-center px-4">
+  <div className="w-full max-w-lg rounded-[32px] border border-white/10 bg-white/[0.05] p-8 text-center shadow-2xl backdrop-blur-xl sm:p-12">
 
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/[0.08] text-3xl">
-            🛒
-          </div>
+    {/* Icon */}
+    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-white/[0.07] text-3xl">
+      🛒
+    </div>
 
-          <h1 className="mt-6 text-3xl font-bold">
-            Your cart is empty
-          </h1>
+    <h1 className="mt-6 text-3xl font-bold text-white">
+      Your cart is empty
+    </h1>
 
-          <p className="mt-3 text-slate-400">
-            Add some products to your cart and they'll appear here.
-          </p>
+    <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-slate-400">
+      Looks like you haven't added anything to your cart yet.
+      Explore our products and find something you'll love.
+    </p>
 
-          <a
-            href="/"
-            className="mt-7 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
-          >
-            Continue Shopping
-          </a>
-        </div>
+    <Link
+      to="/"
+      className="mt-8 inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-slate-200 active:scale-95"
+    >
+      Start Shopping
+    </Link>
+
+  </div>
+</div>
       </main>
     );
   }

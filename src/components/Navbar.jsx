@@ -1,8 +1,11 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+
 function Navbar() {
   const location = useLocation();
+  const [badgeAnimation, setBadgeAnimation] = useState(false);
 
   const cartItems = useSelector(
     (state) => state.cart.items
@@ -15,6 +18,20 @@ function Navbar() {
 
   const isProductsPage = location.pathname === "/";
   const isCartPage = location.pathname === "/cart";
+
+  useEffect(() => {
+  if (cartCount === 0) {
+    return;
+  }
+
+  setBadgeAnimation(true);
+
+  const timer = setTimeout(() => {
+    setBadgeAnimation(false);
+  }, 250);
+
+  return () => clearTimeout(timer);
+}, [cartCount]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
@@ -84,7 +101,9 @@ function Navbar() {
             <span>Cart</span>
 
             {cartCount > 0 && (
-              <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-white px-1.5 text-[10px] font-bold text-slate-950 shadow-lg ring-2 ring-slate-950">
+              <span className={`absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-white px-1.5 text-[10px] font-bold text-slate-950 shadow-lg ring-2 ring-slate-950 transition-transform duration-200 ${
+    badgeAnimation ? "scale-125" : "scale-100"
+  }`}>
                 {cartCount}
               </span>
             )}
