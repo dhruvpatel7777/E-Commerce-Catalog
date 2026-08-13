@@ -11,7 +11,7 @@ function CartItem({ item }) {
   const subtotal = item.price * item.quantity;
 
   return (
-    <div className="group flex flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur-xl transition hover:border-white/20 hover:bg-white/[0.07] sm:flex-row sm:items-center">
+    <div className="group flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl transition hover:border-white/20 hover:bg-white/[0.07] sm:gap-5 sm:p-5 sm:flex-row sm:items-center">
 
       {/* Product Image */}
       <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-2xl bg-white p-4">

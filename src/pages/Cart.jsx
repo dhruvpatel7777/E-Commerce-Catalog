@@ -92,7 +92,7 @@ function Cart() {
           </section>
 
           {/* Order Summary */}
-          <aside className="h-fit rounded-3xl border border-white/10 bg-white/[0.05] p-6 shadow-2xl backdrop-blur-xl lg:sticky lg:top-6">
+         <aside className="h-fit rounded-3xl border border-white/10 bg-white/[0.05] p-5 shadow-2xl backdrop-blur-xl sm:p-6 lg:sticky lg:top-24">
 
             <p className="text-sm font-medium uppercase tracking-wider text-slate-500">
               Order Summary
