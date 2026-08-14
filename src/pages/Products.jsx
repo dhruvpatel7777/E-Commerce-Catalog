@@ -155,7 +155,7 @@ function Products() {
   }
 
   return (
-    <main className="bg-transparent px-4 py-6 text-slate-900 sm:px-6 sm:py-8 lg:px-8">
+    <main className="bg-transparent px-4 py-2 text-slate-900 sm:px-6 sm:py-8 lg:px-8">
 
       <div className="mx-auto w-full max-w-[1280px]">
 
@@ -168,9 +168,9 @@ function Products() {
             Discover
           </p>
 
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className="mt-2 text-xl font-bold tracking-tight text-slate-950 sm:text-3xl">
             Explore Products
-          </h1>
+          </h2>
 
           <p className="mt-2 max-w-xl text-sm text-slate-500 sm:text-base">
             Find something you'll love from our collection.
