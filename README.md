@@ -213,7 +213,7 @@ Verify that:
 
 ## 👨‍💻 Author
 
-Dhruv Patel
+**Dhruv Patel**
 
 Built as a React + Tailwind CSS e-commerce project with a focus on modern Spatial UI design and reusable frontend architecture.
 
